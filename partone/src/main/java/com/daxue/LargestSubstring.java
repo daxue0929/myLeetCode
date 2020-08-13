@@ -14,7 +14,7 @@ public class LargestSubstring {
     public static void main(String[] args){
         String s = "pwwkew";
         Solution solution = new Solution();
-        int i = solution.largestSubstringLength(s);
+        int i = solution.differentCharacterLength(s);
         System.out.println(i);
 
         int i1 = solution.lengthOfLongestSubstring(s);
@@ -23,14 +23,14 @@ public class LargestSubstring {
     }
 
     static class Solution {
-        public int largestSubstringLength(String s) {
+        public int differentCharacterLength(String s) {
             int length = s.length();
             int result = 0;
             HashMap<Character, Integer> map = new HashMap<>();
             for (int i=0, j=0; j<length; j++) {
                 if (!map.containsKey(s.charAt(j))) {
                     map.put(s.charAt(j), j);
-                    result = Math.max(result, j +1 - i);
+                    result = Math.max(result, j + 1 - i);
                 }else {
                     i++;
                 }
@@ -53,6 +53,5 @@ public class LargestSubstring {
             }
             return ans;
         }
-
-        }
+    }
 }
