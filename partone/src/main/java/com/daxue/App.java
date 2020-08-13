@@ -23,22 +23,25 @@ public class App
         int[] ints = solution.twoSum(nums, 9);
         System.out.println(nums[ints[0]] + " " + nums[ints[1]]);
     }
-}
 
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer,Integer> map = new HashMap<>();
-        int[] res = new int[2];
-        for (int i = 0; i < nums.length; i++) {
-            int dif = target - nums[i];
-            if (map.get(dif) != null) {
-                res[0] = map.get(dif);
-                res[1] = i;
-                return res;
+
+    class Solution {
+        public int[] twoSum(int[] nums, int target) {
+            HashMap<Integer,Integer> map = new HashMap<>();
+            int[] res = new int[2];
+            for (int i = 0; i < nums.length; i++) {
+                int dif = target - nums[i];
+                if (map.get(dif) != null) {
+                    res[0] = map.get(dif);
+                    res[1] = i;
+                    return res;
+                }
+                map.put(nums[i],i);
             }
-            map.put(nums[i],i);
+            return res;
         }
-        return res;
     }
 }
+
+
 
