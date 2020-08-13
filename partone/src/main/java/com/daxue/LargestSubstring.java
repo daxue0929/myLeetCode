@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * 滑动窗口算法
  * @author daxue0929
  * @date 2020/08/13
  **/
@@ -22,6 +23,9 @@ public class LargestSubstring {
 
     }
 
+    /**
+     * 错误示例
+     */
     static class Solution {
         public int differentCharacterLength(String s) {
             int length = s.length();
@@ -38,6 +42,14 @@ public class LargestSubstring {
             return result;
         }
 
+        /**
+         * 集合set作为滑动窗口，记录当前满足条件的最长元素集合
+         * 初始化ij相等，都等于0。循环数组，如果j对应元素不存在set中，继续右移动，扩大窗口范围。记录当前size，并进行比较，记录最大size
+         * 如果j的元素一旦在set中存在，移除set中的第一个元素，也就是移动左侧指针i，缩小窗口范围
+         * 直到i 和j其中一个大于数组长度终止循环
+         * @param s
+         * @return
+         */
         public int lengthOfLongestSubstring(String s) {
             int n = s.length();
             Set<Character> set = new HashSet<>();
