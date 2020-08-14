@@ -15,6 +15,7 @@ public class AddOne {
 
     /**
      * 对于长的数组, 运算有越界的的异常错误
+     * 应该使用超大数位 数字四则运算的方式,来计算本题
      * version: 1.0
      */
     static class Solution {
