@@ -28,6 +28,7 @@ public class LargestSubstring {
      */
     static class Solution {
         public int differentCharacterLength(String s) {
+//            String s = "pwwkew";
             int length = s.length();
             int result = 0;
             HashMap<Character, Integer> map = new HashMap<>();
@@ -51,6 +52,7 @@ public class LargestSubstring {
          * @return
          */
         public int lengthOfLongestSubstring(String s) {
+//             String s = "pwwkew";
             int n = s.length();
             Set<Character> set = new HashSet<>();
             int ans = 0, i = 0, j = 0;
